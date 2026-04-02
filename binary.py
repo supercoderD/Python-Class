@@ -1,4 +1,4 @@
-# #Python program to illustrate the use if 'is' identity operator
+ #Python program to illustrate the use if 'is' identity operator
 # x=5
 # if(type(x) is int):
 #     print("true")
