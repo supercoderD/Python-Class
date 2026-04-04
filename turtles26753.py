@@ -41,7 +41,7 @@ len=20
 t.width(2)
 for i in range(50):
     t.forward(len)
-    t.right(144)
+    t.right(267)
     len+=5
 turtle.done()
 
