@@ -25,7 +25,7 @@
 
 
 def factorial(x):
-    '''this is a recursivefunctin to find the factorial of an integer'''
+    '''this is a recursive functin to find the factorial of an integer'''
     
     if x==0 or x==1:
         return 1
