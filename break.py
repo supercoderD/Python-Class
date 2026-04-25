@@ -21,7 +21,7 @@ for i in a:
 # #Write a program to display 1 to 10 numbers in reverse order and skip the number 5.
 for i in range(10,0,-1):
     if i==5:
-        continue
+        continue  
     print(i)
 
 

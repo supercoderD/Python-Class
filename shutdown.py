@@ -1,7 +1,6 @@
 def shutdown():
     import turtle
     turtle.Screen().bgcolor('black')
-    print("Shutdown complete.")
     turtle.done()
 ask=input("Do you want to do the shutdown?")
 if ask=="yes":
