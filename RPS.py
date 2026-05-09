@@ -40,7 +40,7 @@ print("The value of x after copying the sign from y is: " + str(math.copysign(x,
 print(math.fabs(-96))
 print(math.fabs(56))
 
-print(math.gcd(39, 39))
+print(math.gcd(39, 268))
 print(math.sqrt(309))
 print(math.factorial(67))
 print(math.pow(10, 3))
