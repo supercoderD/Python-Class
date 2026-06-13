@@ -31,3 +31,12 @@ for key in testdictionary:
 
 print("Frequency of k is:" + str(res))
 
+
+
+d1={'name':"darsh",'address':{'hno':50,'code':141}}
+print(d1["address"]["code"])
+
+d2={"age":10}
+d3={"height":1.31}
+d2.update(d3)
+print(d2)
