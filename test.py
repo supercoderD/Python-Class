@@ -9,9 +9,27 @@
 # 4.  .get()          →  to look up a student by name
 # 5.  input()         →  to let the user search for a student
 # ------------------------------------------------------------------------
-a=int(input("Enter the data: "))
+data={"Jai": 94, "Vani": 92, "Karan": 95, "Darsh": 97, "Riya": 94}
+total=0
+for score in data.values():
+    total+=score
+average=total/len(data)
+print(average)
+top=max(data,key=data.get)
+bottom=min(data,key=data.get)
+print("The highest scorer is:", top, "and the bottom scorer is", bottom)
+student=input("Enter the student name: ")
+if student in data:
+    print(student, "score is", data[student])
+else: 
+    print("The student is not found.")  
+#add a new item
+name=input("Enter a new student name")
+grade=int(input("Enter the new student's score."))
+data[name]=grade
+print(data)
+for names in data:
+    if data[names] >=95:
+        print(names , "-", data[names])
+        
 
-for i in : 
-    a.get()
-    a.max()
-    a.min()
