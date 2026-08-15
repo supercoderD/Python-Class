@@ -3,18 +3,20 @@ class Book:
     def __init__(self, title, author):
         self.title=title
         self.author=author
-
+        self.isborrowed=False
     def borrow(self):
-        if isborrowed==False:
-            isborrowed=True
+        if self.isborrowed==False:
+            self.isborrowed=True
             print("This is a confomation message that you have borrowed a book.")
         else:
             print("Sorry, this book has already been borrowed by another user.")
    
     def returnbook(self):
-        if isborrowed==True:
-            isborrowed=False
-            print("This is a conformation that you have successfully returned your book.")
+        if self.isborrowed==True:
+            self.isborrowed=False
+            print(f"'{self.title}' has been returned")
+        else:
+            print("This book has not been borrowed.")
 
 book1=Book("Harry Potter and the Sorceror's Stone", "J.K Rowling")
 book1.borrow() 
