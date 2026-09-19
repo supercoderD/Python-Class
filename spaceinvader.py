@@ -43,8 +43,61 @@ def player(x,y):
     screen.blit(playerimage,(x,y))
 def enemy(x,y,i):
     screen.blit(enemyimage[i],(x,y))
+def firebullet(x,y):
+    global bulletstate
+    bulletstate="fire"
+    screen.blit(bulletimage,(x+16, y+10))
+def collision(enemyx,enemyy,bulletx,bullety):
+    distance=math.sqrt((enemyx-bulletx)**2+(enemyy-bullety)**2)
+    return distance < collisiondistance
+running=True
+while running:
+    screen.fill((0,0,0))
+    screen.blit(background,(0,0))
+    for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            running=False
+        if event.type==pygame.KEYDOWN:
+            playerxchange=-5
+            if event.key==pygame.K_LEFT:
+                playerxchange=-5
+            if event.key==pygame.K_RIGHT:
+                playerxchange=5
+            if event.key==pygame.K_SPACE and bulletstate=="ready":
+                bulletx=playerx
+                bullety=playery
+                firebullet(bulletx,bullety)
+        if event.type==pygame.KEYUP and event.key in [pygame.K_LEFT,pygame.K_RIGHT]:
+            playerxchange=0
+    playerx+=playerxchange
+    playeyx=max(0,min(playerx,screenwidth-64))
 
-
+    for j in range(numberofenemies):
+        if enemyy[j]>340:
+            for k in range(numberofenemies):
+                enemyy[k]=2000
+                gameovertext()
+                break
+        enemyx[j]+=enemyxchange[j]
+        if enemyx[j]<= 0 or enemyx[j]>=screenwidth-64:
+            enemyxchange[j]*=-1
+            enemyy[j]+=enemyychange[j]
+        if collision(enemyx[j],enemyy[j],bulletx, bullety):
+            bullety=playerstarty
+            bulletstate="ready"
+            scorevalue+=1
+            enemyx[j]=random.randint(0,screenwidth-64)
+            enemyy[j]=random.randint(enemystartymin,enemystarymax)
+        enemy(enemyx[j],enemyy[j],j)
+    if bullety<=0:
+        bullety=[playerstarty]
+        bulletstate="ready"
+    elif bulletstate=="fire":
+        firebullet(bulletx,bullety)
+        bullety-=bulletychange
+    player(playerx,playery)
+    showscore(textx,texty)
+    pygame.display.update()
 
 
 
