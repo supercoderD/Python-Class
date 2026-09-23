@@ -8,6 +8,9 @@ enemyspeedx, enemyspeedy=4,40
 bulletspeedy=10
 collisiondistance=27
 pygame.init()
+pygame.mixer.init()
+lasersound=pygame.mixer.Sound("assets/laser.wav")
+lasersound.set_volume(0.5)
 screen=pygame.display.set_mode((screenwidth,screenheight))
 background=pygame.image.load("spaceinvaderpic1.png")
 pygame.display.set_caption("Space Invader")
