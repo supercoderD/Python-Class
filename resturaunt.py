@@ -44,5 +44,5 @@ class RestaurantOrderManagement:
             label.config(text=f"{item}({symbol}{price}):")
     def placeorder(self):
         totalcost=0
-        ordersummary=
+       
         
