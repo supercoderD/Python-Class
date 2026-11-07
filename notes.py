@@ -50,7 +50,7 @@ def topwin():
             note10=amount//10
             amount%=10
             note5=amount//5
-            mount%=5
+            amount%=5
             note2=amount//2
             amount%=2
             note1=amount//1
